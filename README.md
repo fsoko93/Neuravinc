@@ -24,5 +24,5 @@ Neuravinc is a mission-driven platform that blends design, education, and AI to 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/neuravinc.git
+   git clone https://fsoko93.github.io/neuravinc/
    cd neuravinc
