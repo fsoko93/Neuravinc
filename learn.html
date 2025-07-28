@@ -1,0 +1,267 @@
+<!-- learn.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neuravinc – Learn</title>
+  <link rel="stylesheet" href="css/learn.css" />
+</head>
+<body>
+
+  <!-- Fixed Header -->
+  <header>
+    <a href="index.html"><img src="Assets/images/nav_logo.png" alt="Logo" width="240" height="62"></a>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="friend.html">AI-Friend</a></li>
+        <li><a href="merch.html">Our Merch</a></li>
+        <li><a href="donation.html">Donation</a></li>
+        <li><a href="login.html" class="login-button">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="lessons-hero">
+      <h1>
+        Lessons for <span class="highlight">ADHD Minds</span>
+      </h1>
+      <p>
+        Explore our interactive lessons specially designed for kids with ADHD.<br>
+        Visual learning, bite-sized content, and instant rewards keep focus high.
+      </p>
+    </section>
+
+    <!-- ─── LESSONS SECTION ───────────────────────────────────────────────────────── -->
+    <!-- ─── LESSONS SECTION ───────────────────────────────────────────────────────── -->
+    <section class="lessons-section">
+      <div class="container">
+
+        <h2>Browse Lessons</h2>
+
+        <!-- Difficulty filters -->
+        <div class="filter-bar">
+          <div class="filter-group">
+            <button data-filter-type="difficulty" data-filter-value="all" class="active">All</button>
+            <button data-filter-type="difficulty" data-filter-value="beginner">Beginner</button>
+            <button data-filter-type="difficulty" data-filter-value="intermediate">Intermediate</button>
+            <button data-filter-type="difficulty" data-filter-value="advanced">Advanced</button>
+          </div>
+          <!-- Category filters -->
+          <div class="filter-group">
+            <button data-filter-type="category" data-filter-value="all" class="active">All</button>
+            <button data-filter-type="category" data-filter-value="arithmetic">Arithmetic</button>
+            <button data-filter-type="category" data-filter-value="animals">Animals</button>
+            <button data-filter-type="category" data-filter-value="plants">Plants</button>
+            <button data-filter-type="category" data-filter-value="weather">Weather</button>
+          </div>
+        </div>
+
+        <!-- Math Lessons -->
+            <!-- --- Math Lessons --- -->
+        <h3 class="subsection-title">Math Lessons</h3>
+        <div class="lessons-grid">
+          <!-- Counting Adventure (Beginner / Arithmetic) -->
+          <div class="lesson-card" data-difficulty="beginner" data-category="arithmetic">
+            <img src="Assets/images/learn_images/counting_adventure.png" alt="Counting Adventure" class="lesson-thumb">
+            <span class="badge beginner">Beginner</span>
+            <h3>Counting Adventure</h3>
+            <p class="subtitle">Look at each group and count how many objects you see!</p>
+            <p class="meta">Duration: 15 min • Category: Arithmetic</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- Add & Subtract Basics (Beginner / Arithmetic) -->
+          <div class="lesson-card" data-difficulty="beginner" data-category="arithmetic">
+            <img src="Assets/images/learn_images/add_subtract_basics.png" alt="Add &amp; Subtract Basics" class="lesson-thumb">
+            <span class="badge beginner">Beginner</span>
+            <h3>Add &amp; Subtract Basics</h3>
+            <p class="subtitle">Start your journey with simple addition and subtraction.</p>
+            <p class="meta">Duration: 20 min • Category: Arithmetic</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- Multiplication Magic (Intermediate / Arithmetic) -->
+          <div class="lesson-card" data-difficulty="intermediate" data-category="arithmetic">
+            <img src="Assets/images/learn_images/multiplication_magic.png" alt="Multiplication Magic" class="lesson-thumb">
+            <span class="badge intermediate">Intermediate</span>
+            <h3>Multiplication Magic</h3>
+            <p class="subtitle">Understand multiplication with visual arrays and fun games.</p>
+            <p class="meta">Duration: 15 min • Category: Arithmetic</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- “No Lessons” placeholder -->
+          <div class="placeholder-card">
+            No lessons found for those filters.
+          </div>
+        </div>
+
+        <!-- --- Science Lessons --- -->
+        <h3 class="subsection-title">Science Lessons</h3>
+        <div class="lessons-grid">
+          <!-- Animal Kingdom (Beginner / Animals) -->
+          <div class="lesson-card" data-difficulty="beginner" data-category="animals">
+            <img src="Assets/images/learn_images/animal_kingdom.png" alt="Animal Kingdom" class="lesson-thumb">
+            <span class="badge beginner">Beginner</span>
+            <h3>Animal Kingdom</h3>
+            <p class="subtitle">Discover amazing facts about animals.</p>
+            <p class="meta">Duration: 15 min • Category: Animals</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- Plant Life (Intermediate / Plants) -->
+          <div class="lesson-card" data-difficulty="intermediate" data-category="plants">
+            <img src="Assets/images/learn_images/plant_life.png" alt="Plant Life" class="lesson-thumb">
+            <span class="badge intermediate">Intermediate</span>
+            <h3>Plant Life</h3>
+            <p class="subtitle">Learn how plants grow and thrive.</p>
+            <p class="meta">Duration: 20 min • Category: Plants</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- Weather Wonders (Advanced / Weather) -->
+          <div class="lesson-card" data-difficulty="advanced" data-category="weather">
+            <img src="Assets/images/learn_images/weather_wonders.png" alt="Weather Wonders" class="lesson-thumb">
+            <span class="badge advanced">Advanced</span>
+            <h3>Weather Wonders</h3>
+            <p class="subtitle">Explore how rain, snow, and sunshine happen.</p>
+            <p class="meta">Duration: 20 min • Category: Weather</p>
+            <a href="#" class="btn-sm">Start Lesson</a>
+          </div>
+
+          <!-- “No Lessons” placeholder -->
+          <div class="placeholder-card">
+            No lessons found for those filters.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Simple filtering logic + placeholder toggle
+      document.querySelectorAll('.filter-bar button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // 1) manage active state
+          btn.closest('.filter-group')
+            .querySelectorAll('button')
+            .forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // 2) read both active filters
+          const activeDiff = document.querySelector('[data-filter-type="difficulty"].active').dataset.filterValue;
+          const activeCat  = document.querySelector('[data-filter-type="category"].active').dataset.filterValue;
+
+          // 3) for each grid, filter its cards and toggle its placeholder
+          document.querySelectorAll('.lessons-grid').forEach(grid => {
+            let anyVisible = false;
+            grid.querySelectorAll('.lesson-card').forEach(card => {
+              const okDiff = (activeDiff === 'all') || (card.dataset.difficulty === activeDiff);
+              const okCat  = (activeCat  === 'all') || (card.dataset.category   === activeCat);
+              const show   = okDiff && okCat;
+              card.style.display = show ? '' : 'none';
+              if(show) anyVisible = true;
+            });
+            // show placeholder when no cards are visible
+            const placeholder = grid.querySelector('.placeholder-card');
+            placeholder.style.display = anyVisible ? 'none' : 'flex';
+          });
+        });
+      });
+    </script>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2>Why Our Learning Method Works for ADHD</h2>
+        <div class="features-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <!-- clock icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Bite-sized Learning</h3>
+            <p>Lessons are broken down into small, manageable chunks that respect the attention span of ADHD learners.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <!-- down-arrow icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <h3>Visual Reinforcement</h3>
+            <p>Strong visual aids and animations help concepts stick by engaging multiple senses simultaneously.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <!-- heart icon -->
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+              </div>
+            </div>  
+            <h3>Immediate Feedback</h3>
+            <p>Instant rewards and feedback satisfy the ADHD brain’s need for dopamine and reinforcement.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3>Minimized Distractions</h3>
+            <p>Clean interface design reduces external stimuli that can pull focus away from learning.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <!-- check-circle icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="9 12 12 15 17 10"></polyline>
+              </svg>
+            </div>
+            <h3>Adaptive Difficulty</h3>
+            <p>Our system adjusts to each learner’s pace and abilities, preventing frustration or boredom.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <!-- graduation-cap icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                fill="none" stroke="currentColor" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h3>Parent &amp; Teacher Tools</h3>
+            <p>Comprehensive progress tracking and reports help adults support the learning journey effectively.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Neuravinc. All rights reserved.</p>
+    <p>Site by Neuravinc Dev Team</p>
+  </footer>
+
+</body>
+</html>
