@@ -1,0 +1,350 @@
+/* learn.css */
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background-color: #050a30;
+  color: #fff;
+  padding-top: 100px; /* header height */
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #4151b4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+header img:first-of-type {
+  height: 60px;
+  object-fit: contain;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+nav ul li a {
+  position: relative;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px; width: 0%;
+  background: #00bfff;
+  transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover::after { width: 100%; }
+nav ul li a:hover { color: #00bfff; }
+nav ul li a.login-button {
+  padding: 6px 14px;
+  border: 2px solid #00bfff;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a.login-button:hover {
+  background: #00bfff;
+  color: #050a30;
+}
+
+/* ─── LESSONS HERO (copy of ABOUT HERO ADJUSTED) ───────────────────────── */
+.lessons-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem; /* taller top/bottom */
+  background: linear-gradient(120deg, #4151b4, #2e387d);
+  text-align: left;
+}
+.lessons-hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.lessons-hero h1,
+.lessons-hero p {
+  transform: translateX(-60%);
+  opacity: 0;
+  animation: slideIn 1s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.lessons-hero h1 {
+  display: inline-block;
+  font-size: 3rem;
+  color: #fff;
+  position: relative;
+  animation-delay: 0.2s;
+}
+.lessons-hero h1 .highlight {
+  color: #00e0ff;
+}
+.lessons-hero h1::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0; height: 3px;
+  background-color: #00e0ff;
+  animation: underline 0.8s ease-out forwards 1.2s;
+}
+.lessons-hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  max-width: 700px;
+  animation-delay: 0.6s;
+}
+@keyframes slideIn {
+  from { transform: translateX(-60%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes underline {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ─── LESSONS SECTION ───────────────────────────────────────────────────────── */
+.lessons-section {
+  padding: 4rem 0;               /* plenty of breathing room top & bottom */
+  text-align: left;
+}
+
+/* Main section heading */
+.lessons-section h2 {
+  font-size: 2rem;
+  margin: 0 0 2rem 1rem;        /* 2rem below + indent from left */
+  color: #fff;
+}
+
+/* Sub-section titles (Math Lessons / Science Lessons) */
+.subsection-title {
+  font-size: 1.5rem;
+  margin: 2rem 1rem 1rem;       /* space above, indent left, small gap below */
+  color: #fff;
+}
+
+/* Filters row */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 1rem 2rem;           /* inset left/right + bottom gap */
+}
+
+/* Filter pills */
+.filter-bar .filter-group button {
+  background: #1c1744;
+  color: #ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.filter-bar .filter-group button.active {
+  background: #00bfff;
+  color: #050a30;
+}
+
+/* ─── LESSONS GRID & CARDS ───────────────────────────────────────────────── */
+.lessons-grid {
+  display: grid;
+  /* use fixed 280px columns and pack them to the left */
+  grid-template-columns: repeat(auto-fill, 280px);
+  gap: 1rem;                    /* smaller gap between cards */
+  justify-content: start;       /* push all cards to left edge */
+  margin: 0 0 2rem 1rem;        /* left indent matches heading */
+  padding: 0;
+}
+
+.lesson-card,
+.placeholder-card {
+  width: 100%;
+  max-width: 280px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  overflow: hidden;
+
+  /* subtle inset aqua outline + existing drop-shadow */
+  border: none;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(0, 224, 255, 0.2);
+
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(0, 224, 255, 0.2);
+}
+
+/* thumbnail */
+.lesson-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #f9f9f9;
+}
+
+/* badge */
+.badge {
+  margin: 0.5rem 1rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.beginner     { background: #4caf50;  color:#fff; }
+.badge.intermediate { background: #ffb74d; color:#fff; }
+.badge.advanced     { background: #e57373; color:#fff; }
+
+/* text */
+.lesson-card h3 {
+  margin: 0.75rem 1rem;
+  font-size: 1.25rem;
+}
+.lesson-card .subtitle {
+  margin: 0 1rem 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.lesson-card .meta {
+  margin: 0 1rem 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* button */
+.btn-sm {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: auto 1rem 1.5rem;
+  background: #00bfff;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: auto;
+}
+.btn-sm:hover {
+  background: #0099cc;
+  transform: translateY(-2px);
+}
+
+/* placeholder */
+.placeholder-card {
+  border: 2px dashed #555;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* ─── FEATURES / WHY IT WORKS ─────────────────────────────────────────────── */
+.features-section {
+  background-color: #111536;   /* slightly lighter than #050a30 */
+  padding: 4rem 1rem;
+}
+.features-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.features-section h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* grid of feature cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* exactly 3 columns */
+  grid-auto-rows: auto;                  /* as many rows as needed (2 here) */
+  gap: 1.5rem;
+}
+
+/* reuse your value-card style */
+.value-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,224,255,0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* icon wrapper */
+.value-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #00e0ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.value-icon svg {
+  stroke: #050a30;
+  width: 24px;
+  height: 24px;
+}
+
+/* card text */
+.value-card h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0.75rem;
+}
+.value-card p {
+  color: #ccc;
+  line-height: 1.6;
+}
+/* ─── FEATURES GRID – FORCE 3×2 ────────────────────────────────────────── */
+
+
+/* collapse to single column on small screens */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Footer ───────────────────────────────────────────────────────────── */
+footer {
+  background-color: #4151b4;
+  color: #e0e0ff;
+  text-align: center;
+  padding: 1.5rem 0;
+}
