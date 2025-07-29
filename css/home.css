@@ -188,54 +188,111 @@ nav ul li a.login-button:hover {
   100% { box-shadow: 0 0 0 0   rgba(107,51,255,0.7); }
 }
 
-/* About Us Section */
-#aboutus {
+/* ─── ABOUT SECTION ───────────────────────────────────────────────────────── */
+.about-section {
+  padding: 4rem 1rem;
+  background-color: #050a30;
+}
+
+.about-container {
+  background-color: #fff;                     /* white card */
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 0.5px solid rgba(0, 225, 255, 0.3);  /* slim cyan border */
+}
+
+.about-logo {
+  flex: 1 1 240px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
   justify-content: center;
   padding: 2rem;
 }
 
-.about-box {
-  display: flex;
-  background-color: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  height: 350px;
-}
-
-.about-img {
+.about-logo img {
   max-width: 300px;
-  width: 100%;
-  border-radius: 16px;
+  height: auto;
 }
 
-.about-text {
-  flex: 1;
-  font-family: 'Lexend', sans-serif;
-  color: #333;
+.about-content {
+  flex: 2 1 460px;
+  padding: 2.5rem 3rem;
+  background: #0b0f2f;
+  position: relative;
 }
 
-.about-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+/* Title + underline */
+.about-title {
+  font-size: 2.75rem;
+  color: #00e0ff;
+  margin: 0 0 1rem;
+  position: relative;
+  display: inline-block;
+  transform: translateX(-60%);
+  opacity: 0;
+  animation: slideInText 0.8s ease-out forwards 0.2s;
+}
+.about-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 4px;
+  background: #00e0ff;
+  animation: aboutUnderline 0.8s ease-out forwards 0.6s;
 }
 
-.about-text p {
-  font-size: 1rem;
+/* Paragraphs slide in */
+.about-content p {
+  color: #e0e0e0;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  transform: translateX(-60%);
+  opacity: 0;
+  animation: slideInText 0.8s ease-out forwards;
+}
+.about-content p:nth-of-type(1) { animation-delay: 0.6s; }
+.about-content p:nth-of-type(2) { animation-delay: 0.8s; }
+.about-content p:nth-of-type(3) { animation-delay: 1.0s; }
+
+/* Keyframes */
+@keyframes slideInText {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes aboutUnderline {
+  to {
+    width: 100%;
+  }
 }
 
-/* Mission Section */
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-logo,
+  .about-content {
+    padding: 1.5rem;
+  }
+  .about-content {
+    padding-top: 0;
+  }
+}
+
+/* ─── MISSION SECTION ───────────────────────────────────────────────────────── */
 #mission {
   padding: 4rem 2rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
   background-color: #050a30;
 }
 
@@ -266,88 +323,64 @@ nav ul li a.login-button:hover {
   line-height: 1.6;
 }
 
+/* ─── MISSION IMAGE + STRONGER RADAR ARC & SHADOW ───────────────────────── */
+.cool-image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: visible;               /* allow glow to show */
+  border-radius: 50%;              /* ensure wrapper is circular */
+  
+  /* constant soft glow around the entire circle */
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+  
+  /* hover: scale up */
+  transition: transform 0.4s ease;
+}
+.cool-image-wrapper:hover {
+  transform: scale(1.1);
+}
+
+/* ─── MISSION IMAGE: SIMPLE SHADOW ───────────────────────── */
 .cool-image-wrapper {
   width: 300px;
   height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* plain soft shadow */
+  box-shadow: 0 8px 20px rgba(0, 204, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cool-image-wrapper:hover {
-  transform: scale(1.1);
-}
-
-.masked-image {
+/* keep the image perfectly circular */
+.cool-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   clip-path: circle(50% at 50% 50%);
-  transition: clip-path 0.3s ease;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #666;
-  background-color: #f9f9f9;
-  margin-top: 60px;
+/* subtle scale + stronger shadow on hover */
+.cool-image-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
-
-/* Typewriter animation */
-.typewriter {
-  font-size: 20px;
-  color: #00bfff;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #00bfff;
-  width: fit-content;
-  margin: 20px auto 0;
-  animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* Responsive Design */
+/* ─── RESPONSIVE ADJUSTMENTS ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .about-box {
-    flex-direction: column;
-    height: auto;
-    padding: 1.5rem;
-  }
-
   .mission-content {
     flex-direction: column;
     gap: 2rem;
   }
-
   .cool-image-wrapper {
     width: 100%;
     height: auto;
     border-radius: 0;
   }
-
-  .about-img {
-    max-width: 100%;
+  .masked-image {
+    clip-path: none;
   }
 }
-
 /* ─── PARTNERS SECTION ───────────────────────────────────────────────── */
 .partners-section {
   background-color: #fff;     /* white background */
