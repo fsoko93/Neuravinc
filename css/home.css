@@ -423,3 +423,125 @@ nav ul li a.login-button:hover {
     max-height: 64px;       /* was 48px */
   }
 }
+
+/* Typewriter effect */
+.typewriter {
+  font-size: 20px;
+  color: #00e0ff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular',
+               'Lucida Grande', 'Lucida Sans Unicode',
+               Geneva, Verdana, sans-serif;
+  overflow: hidden;                   /* hide overflow */
+  white-space: nowrap;                /* single line */
+  border-right: 3px solid #00e0ff;    /* cursor */
+  width: 0ch;                         /* start collapsed */
+  margin: 20px auto 0;                /* adjust as needed */
+  animation:
+    typing 3s steps(39, end) forwards,   /* type in 39 characters */
+    blinkCursor 0.8s step-end infinite;  /* blink the cursor */
+}
+
+@keyframes typing {
+  from { width: 0ch; }
+  to   { width: 39ch; }               /* match your exact character count */
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: #00e0ff; }
+  50%      { border-color: transparent; }
+}
+
+/* ─── FEATURES + TESTIMONIALS SECTION ───────────────────────────────────────────────── */
+.ft-section {
+  background: linear-gradient(180deg, #111536 0%, #050a30 100%);
+  padding: 4rem 1rem;
+}
+.ft-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Shared heading style */
+.ft-title {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 2rem 0 1.5rem;
+}
+.ft-title .highlight {
+  color: #00e0ff;
+}
+
+/* 3‐column grid for both features & testimonials */
+.ft-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 768px) {
+  .ft-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card base */
+.ft-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,224,255,0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.ft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+/* Feature icon */
+.ft-icon {
+  font-size: 2rem;
+  color: #00e0ff;
+  margin-bottom: 1rem;
+}
+
+/* Testimonial avatar */
+.avatar {
+  width: 48px;
+  height: 48px;
+  background-color: #00e0ff;
+  border-radius: 50%;
+  color: #050a30;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Card titles */
+.ft-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.ft-card .role {
+  margin: 0.25rem 0 1rem;
+  color: #c0c0cf;
+  font-size: 0.9rem;
+}
+
+/* Feature/testimonial text */
+.ft-card p,
+.ft-card blockquote {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+.ft-card blockquote {
+  font-style: italic;
+}
